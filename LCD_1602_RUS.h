@@ -6,9 +6,9 @@
 
 class LCD_1602_RUS : public LiquidCrystal_I2C {
 public:
-	LCD_1602_RUS(uint8_t, uint8_t, uint8_t);
-	void print(const wchar_t[]);
-	void print(const char[]);
+  LCD_1602_RUS(uint8_t, uint8_t, uint8_t);
+  void print(const wchar_t[]);
+  void print(const char[]);
   void print(int, int = DEC);
   void print(unsigned int, int = DEC);
   void print(long, int = DEC);
@@ -18,9 +18,9 @@ public:
   void print(unsigned char, int = BYTE);
   void print(double, int = 2);
   void clear();
-	void setCursor(uint8_t, uint8_t); 
-	uint8_t getCursorCol(); 
-	uint8_t getCursorRow(); 
+  void setCursor(uint8_t, uint8_t); 
+  uint8_t getCursorCol(); 
+  uint8_t getCursorRow(); 
   wchar_t *asciiutf8(unsigned char);
 
 private:
@@ -30,8 +30,8 @@ private:
   uint8_t mbtowc(wchar_t *, char *, uint8_t);
 
   int symbol_index;//Индекс символа (от 0 до 7)
-  uint8_t cursor_col = 0;
-  uint8_t cursor_row = 0;
+  uint8_t cursor_col;
+  uint8_t cursor_row;
   //===Буквы====
   uint8_t index_rus_B;
   uint8_t index_rus_G;
